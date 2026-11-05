@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: app
 title: Documenti
 permalink: /documenti/
 script: /assets/js/documenti.js
-body_class: app
 ---
 <div id="lh" hidden
   data-name="{{ site.letterhead.name }}" data-tagline="{{ site.letterhead.tagline }}"
@@ -35,6 +34,7 @@ body_class: app
     <div class="actions">
       <button type="button" class="btn dark" id="pdf">Stampa / Salva PDF</button>
       <button type="button" class="btn yellow" id="word">Scarica Word</button>
+      <button type="button" class="btn ghost" id="md">Salva per archivio (.md)</button>
       <button type="button" class="btn ghost" id="reset">Svuota</button>
     </div>
     <p class="hint">La bozza si salva da sola in questo browser.</p>

@@ -41,7 +41,12 @@ exports.handler = async (ev) => {
 
   if (a === 'login') {
     if (!E.PORTAL_PASSWORD || !E.SESSION_SECRET) return out(500, { error: 'Configura PORTAL_PASSWORD e SESSION_SECRET' });
-    if (!crypto.timingSafeEqual(sha(body.password), sha(E.PORTAL_PASSWORD))) return out(401, { error: 'Password errata' });
+    const dom = '@' + (E.ALLOWED_DOMAIN || 'joneshouse.it').toLowerCase();
+    const mail = String(body.email || '').trim().toLowerCase();
+    const list = (E.ALLOWED_EMAILS || '').toLowerCase().split(',').map(x => x.trim()).filter(Boolean);
+    const okMail = mail.endsWith(dom) && mail.length > dom.length && (!list.length || list.includes(mail));
+    const okPw = crypto.timingSafeEqual(sha(body.password), sha(E.PORTAL_PASSWORD));
+    if (!okMail || !okPw) { await new Promise(r => setTimeout(r, 700)); return out(401, { error: 'Credenziali non valide' }); }
     const exp = String(Date.now() + 12 * 3600e3);
     return out(200, { ok: true }, { 'Set-Cookie': `gj_session=${exp}.${sign(exp)}; Path=/; Max-Age=43200; HttpOnly; Secure; SameSite=Strict` });
   }

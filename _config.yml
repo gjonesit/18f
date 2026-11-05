@@ -1,5 +1,9 @@
 title: Portale Gabriel Jones
 lang: it
+collections:
+  archivio:
+    output: true
+    permalink: /archivio/:name/
 exclude: [netlify, README.md, Gemfile.lock, node_modules]
 sitepublic: "https://INSERISCI-IL-TUO-SITO.it"
 # Dati della carta intestata (modificali qui)
@@ -9,5 +13,7 @@ letterhead:
   address: "[Indirizzo]"
   email: "[email]"
   phone: "[telefono]"
-  web: "[sito web]"
+  web: "joneshouse.it"
   vat: "[Partita IVA / Codice Fiscale]"
+
+portal_domain: "joneshouse.it"

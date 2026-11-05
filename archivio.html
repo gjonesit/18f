@@ -1,0 +1,11 @@
+---
+layout: page
+title: Archivio
+subtitle: I documenti salvati, pronti da stampare.
+permalink: /archivio/
+---
+{% assign docs = site.archivio | sort: "date" | reverse %}
+{% if docs.size == 0 %}<p>Nessun documento. Crea il primo da <a href="{{ '/documenti/' | relative_url }}">Documenti</a>.</p>{% endif %}
+<ul class="doclist">
+{% for d in docs %}<li><a href="{{ d.url | relative_url }}"><b>{{ d.title }}</b><span>{{ d.date | date: "%-d/%m/%Y" }}</span></a></li>{% endfor %}
+</ul>

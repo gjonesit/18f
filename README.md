@@ -21,6 +21,8 @@ Jekyll + Netlify (con Netlify Function per Zoho Mail).
 | ZOHO_REFRESH_TOKEN | dal passo 2.3 |
 | ZOHO_ACCOUNT_ID | dal passo 2.4 |
 | ZOHO_FROM | il tuo indirizzo Zoho mittente |
+| ALLOWED_DOMAIN | `joneshouse.it` (default) |
+| ALLOWED_EMAILS | facoltativo: elenco di email consentite, separate da virgola |
 | ZOHO_DC | `eu` (default), `com` o `in` |
 
 ## 4. Pubblica

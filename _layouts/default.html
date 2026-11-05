@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/portal.css' | relative_url }}">
 </head>
-<body class="{{ page.body_class }}">
+<body class="{{ page.layout }}">
 <header class="mast">
   <div class="mast-row">
     <button id="menu" class="mini" type="button" aria-expanded="false" aria-controls="mnav"><span class="bars"></span>Menu</button>
@@ -20,7 +20,9 @@
   <nav id="mnav" aria-label="Principale">
     <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
     <a href="{{ '/documenti/' | relative_url }}" {% if page.url == '/documenti/' %}aria-current="page"{% endif %}>Documenti</a>
+    <a href="{{ '/archivio/' | relative_url }}" {% if page.url contains '/archivio' %}aria-current="page"{% endif %}>Archivio</a>
     <a href="{{ '/webmail/' | relative_url }}" {% if page.url == '/webmail/' %}aria-current="page"{% endif %}>Webmail</a>
+    <a href="{{ '/guida/' | relative_url }}" {% if page.url == '/guida/' %}aria-current="page"{% endif %}>Guida</a>
     <a href="{{ site.sitepublic }}" target="_blank" rel="noopener">Sito pubblico</a>
   </nav>
 </header>
@@ -41,7 +43,8 @@
 <div id="gate" hidden>
   <form id="gateform" class="gatebox">
     <h1>Area riservata</h1>
-    <p>Inserisci la password del portale.</p>
+    <p>Accedi con la tua email <b>@{{ site.portal_domain }}</b>.</p>
+    <input type="email" id="gateemail" placeholder="nome@{{ site.portal_domain }}" autocomplete="username" required>
     <input type="password" id="gatepw" placeholder="Password" autocomplete="current-password" required>
     <button class="btn dark" type="submit">Entra</button>
     <p id="gateerr" class="err" role="alert"></p>

@@ -41,4 +41,10 @@ $('#word').onclick=()=>{
   a.href=URL.createObjectURL(new Blob(['\ufeff',out],{type:'application/msword'}));
   a.download=(d.ogg||'documento').replace(/[^\w\-]+/g,'_')+'.doc';a.click();URL.revokeObjectURL(a.href);
 };
+$('#md').onclick=()=>{
+  const d=v(),q=x=>JSON.stringify(x||'');
+  const md=`---\nlayout: document\ntitle: ${q(d.ogg||'Documento')}\ndate: ${d.data}\nluogo: ${q(d.luogo)}\ndest: ${q(d.dest)}\nsaluti: ${q(d.saluti)}\nfirma: ${q(d.firma)}\n---\n${d.corpo}\n`;
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([md],{type:'text/markdown'}));
+  a.download=`${d.data}-${(d.ogg||'documento').toLowerCase().replace(/[^a-z0-9]+/g,'-')}.md`;a.click();URL.revokeObjectURL(a.href);
+};
 load();
