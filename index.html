@@ -2,33 +2,11 @@
 layout: default
 title: Home
 ---
-<section class="hero ruled">
-  <p class="hand">portale interno di</p>
-  <h1 class="stamp">GABRIEL JONES</h1>
-  <p class="lead">Scrivo documenti, leggo la posta, tengo tutto in ordine.</p>
-  <div class="cta">
-    <a class="btn dark" href="{{ '/documenti/' | relative_url }}">Nuovo documento</a>
-    <a class="btn yellow" href="{{ '/webmail/' | relative_url }}">Apri la webmail</a>
-  </div>
-</section>
-
-<section class="wine">
-  <p class="tag">Strumenti</p>
-  <h2>Oggi si lavora!</h2>
-  <p class="sub">Documenti su carta intestata e posta Zoho, nello stesso posto e con i tuoi colori.</p>
-  <div class="cta"><a class="btn yellow" href="{{ site.sitepublic }}" target="_blank" rel="noopener">Vai al sito Playbook</a></div>
-</section>
-
-<section class="band pink">
-  <div class="wrap">
-    <h2>Come funziona</h2>
-    <div class="cards three">
-      <div class="card"><span class="num">1</span><h3>Accedi</h3><p>Entra con la password del portale. La sessione dura 12 ore.</p></div>
-      <div class="card"><span class="num">2</span><h3>Scegli lo strumento</h3><p>Documenti per scrivere su carta intestata, Webmail per la posta.</p></div>
-      <div class="card"><span class="num">3</span><h3>Scarica o invia</h3><p>Salva in PDF o Word, oppure invia l’email dal tuo indirizzo Zoho.</p></div>
-    </div>
-  </div>
-</section>
+<section class="hero"><p class="hand">benvenuto nel portale di</p><h1 class="stamp">Gabriel Jones</h1>
+<p class="lead">Posta e documenti con carta intestata, solo per chi lavora con me.</p>
+<p class="only-out"><a class="btn dark" href="/auth/zoho">Accedi con Zoho</a></p>
+<p class="only-in"><a class="btn" href="/posta/">Apri la posta</a> <a class="btn dark" href="/documenti/">Scrivi un documento</a></p></section>
 <div class="checker"></div>
-
-<section class="mintband"><p>Il lavoro d’ufficio funziona meglio quando è <span>semplice.</span></p></section>
+<section class="rail only-in"><h2>In evidenza</h2><div class="cards">
+<a class="card wine" href="/posta/"><div class="ico">✉️</div><h3>Posta</h3><span>Leggi e scrivi</span></a>
+<a class="card green" href="/documenti/"><div class="ico">📝</div><h3>Documenti</h3><span>Carta intestata</span></a></div></section>

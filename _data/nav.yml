@@ -1,0 +1,3 @@
+- {t: Home, url: /}
+- {t: Posta, url: /posta/}
+- {t: Documenti, url: /documenti/}

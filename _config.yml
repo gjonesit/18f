@@ -1,19 +1,4 @@
-title: Portale Gabriel Jones
+title: Gabriel Jones
 lang: it
-collections:
-  archivio:
-    output: true
-    permalink: /archivio/:name/
-exclude: [netlify, README.md, Gemfile.lock, node_modules]
-sitepublic: "https://joneshouse.it"
-# Dati della carta intestata (modificali qui)
-letterhead:
-  name: "Gabriel Jones"
-  tagline: "Creatore di Playbook"
-  address: "[Indirizzo]"
-  email: "[email]"
-  phone: "[telefono]"
-  web: "joneshouse.it"
-  vat: "[Partita IVA / Codice Fiscale]"
-
-portal_domain: "gabrieljones.it"
+exclude: [node_modules, netlify, package.json, package-lock.json, Gemfile, Gemfile.lock, vendor, README.md, .env]
+sass: {style: compressed}

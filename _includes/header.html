@@ -1,0 +1,2 @@
+<header class="top"><div class="top-row"><span class="who only-in" id="who"></span><a class="logo" href="/">Gabriel Jones</a><a class="out only-in" id="out" href="#">Esci</a></div>
+<nav>{% for l in site.data.nav %}<a href="{{ l.url }}"{% if page.url == l.url %} aria-current="page"{% endif %}>{{ l.t }}</a>{% endfor %}</nav></header>
