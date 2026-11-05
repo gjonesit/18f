@@ -1,0 +1,16 @@
+[build]
+  command = "jekyll build"
+  publish = "_site"
+  functions = "netlify/functions"
+
+[build.environment]
+  RUBY_VERSION = "3.2.2"
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "same-origin"
+    X-Robots-Tag = "noindex, nofollow"

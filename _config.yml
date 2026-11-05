@@ -1,0 +1,13 @@
+title: Portale Gabriel Jones
+lang: it
+exclude: [netlify, README.md, Gemfile.lock, node_modules]
+sitepublic: "https://INSERISCI-IL-TUO-SITO.it"
+# Dati della carta intestata (modificali qui)
+letterhead:
+  name: "Gabriel Jones"
+  tagline: "Creatore di Playbook"
+  address: "[Indirizzo]"
+  email: "[email]"
+  phone: "[telefono]"
+  web: "[sito web]"
+  vat: "[Partita IVA / Codice Fiscale]"
