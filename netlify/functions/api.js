@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const E = process.env, DC = E.ZOHO_DC || 'eu';
 const H = { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
 const out = (s, o, extra = {}) => ({ statusCode: s, headers: { ...H, ...extra }, body: JSON.stringify(o) });
-const sign = v => crypto.createHmac('sha256', E.SESSION_SECRET || '').update(v).digest('hex');
+const sign = v => crypto.createHmac('sha256', E.8680ca4cbc72ac6aa15614df449387c6c67964f546 || '').update(v).digest('hex');
 const sha = v => crypto.createHash('sha256').update(String(v)).digest();
 
 const valid = h => {
@@ -25,7 +25,7 @@ async function token() {
   return tok.v;
 }
 async function zoho(path, opt = {}) {
-  const r = await fetch(`https://mail.zoho.${DC}/api/accounts/${E.ZOHO_ACCOUNT_ID}${path}`, {
+  const r = await fetch(`https://mail.zoho.${DC}/api/accounts/${E.1000.9HY0S2LHUEAAPUNI5YY13T77615KEI}${path}`, {
     ...opt, headers: { Authorization: 'Zoho-oauthtoken ' + await token(), Accept: 'application/json', 'Content-Type': 'application/json' }
   });
   const j = await r.json().catch(() => ({}));
@@ -41,7 +41,7 @@ exports.handler = async (ev) => {
 
   if (a === 'login') {
     if (!E.PORTAL_PASSWORD || !E.SESSION_SECRET) return out(500, { error: 'Configura PORTAL_PASSWORD e SESSION_SECRET' });
-    const dom = '@' + (E.ALLOWED_DOMAIN || 'joneshouse.it').toLowerCase();
+    const dom = '@' + (E.ALLOWED_DOMAIN || '18f.it').toLowerCase();
     const mail = String(body.email || '').trim().toLowerCase();
     const list = (E.ALLOWED_EMAILS || '').toLowerCase().split(',').map(x => x.trim()).filter(Boolean);
     const okMail = mail.endsWith(dom) && mail.length > dom.length && (!list.length || list.includes(mail));

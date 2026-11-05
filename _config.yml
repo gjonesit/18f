@@ -5,7 +5,7 @@ collections:
     output: true
     permalink: /archivio/:name/
 exclude: [netlify, README.md, Gemfile.lock, node_modules]
-sitepublic: "https://INSERISCI-IL-TUO-SITO.it"
+sitepublic: "https://joneshouse.it"
 # Dati della carta intestata (modificali qui)
 letterhead:
   name: "Gabriel Jones"
@@ -16,4 +16,4 @@ letterhead:
   web: "joneshouse.it"
   vat: "[Partita IVA / Codice Fiscale]"
 
-portal_domain: "joneshouse.it"
+portal_domain: "gabrieljones.it"
